@@ -135,7 +135,7 @@ class Game
 
     private function did_player_win(): bool
     {
-        return ! ( $this->get_player_purse() == 6 );
+        return ! ( $this->get_player_purse() === 6 );
     }
 
     private function add_to_player_purse()
@@ -191,7 +191,7 @@ class Game
     {
         $player_has_penalty = $this->player_has_penalty( $this->players->get_current_player_id() );
         $current_player = $this->players->get_current_player();
-        
+
 		if ( $player_has_penalty && ! $this->is_getting_out_of_penalty_box ) {
             $this->players->set_next_player();
             return true;
